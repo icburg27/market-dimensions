@@ -54,6 +54,6 @@ The flow dial comes from a six-sector lead–lag matrix, and even pure noise dec
 
 ## What we owe you
 
-Three deliverables, so this page reads as a to-do list rather than a shrug: bootstrap confidence bands on effective dimension; a T2 hit-and-false-alarm table across every drawdown in the research panel; and a shuffled-returns null for vorticity. We will register each as a process claim in the ledger with a due date, so that missing them is graded like everything else.
+Three deliverables, so this page reads as a to-do list rather than a shrug — each registered in the [ledger](/ledger/) as a process claim with a due date, so that missing them is graded like everything else: **PROC-1**, bootstrap confidence bands on effective dimension, due 2026-10-31; **PROC-2**, a T2 hit-and-false-alarm table across every drawdown in the research panel with the rule frozen as deployed, due 2026-11-28; **PROC-3**, a shuffled-returns null for vorticity — and T1 retired if it can't be told from noise — due 2026-12-26.
 
 *Research and education, not investment advice. Especially this page.*
