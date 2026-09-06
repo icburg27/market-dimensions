@@ -19,10 +19,12 @@
       this.reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
       this.bindControls();
       // lazy: fetch the replay only when the instrument is near the viewport
+      const start = () => { if (!this._started) { this._started = true; this.load(this.mode); } };
       if ("IntersectionObserver" in window) {
-        const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); this.load(this.mode); } }, { rootMargin: "400px" });
+        const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); start(); } }, { rootMargin: "400px" });
         io.observe(root);
-      } else this.load(this.mode);
+        setTimeout(start, 4000); // fallback: idle tabs and odd viewports still get their constellation
+      } else start();
       new ResizeObserver(() => { this.resize(); this.draw(); }).observe(this.canvas.parentElement);
       this.canvas.addEventListener("pointerdown", e => this.onPointer(e, true));
       this.canvas.addEventListener("pointermove", e => this.onPointer(e, false));
@@ -54,6 +56,7 @@
           ? "Replay, 2006 → 2010: twenty stocks from the research panel. Watch the room close in August 2007 — thirteen months before Lehman."
           : "Replay, mid-2019 → mid-2021: the same twenty. No warning, a 23-day collapse, then a fast, near-symmetric re-inflation.";
       this.resize(); this.draw();
+      document.addEventListener("visibilitychange", () => { if (!document.hidden) { this.resize(); this.draw(); } }, { once: true });
       if (mode !== "live" && !this.reduced) { this.playing = true; this.syncPlay(); }
     }
     toggle() { this.playing = !this.playing; if (this.playing && this.pos >= this.data.frames.length - 1) this.pos = 0; this.syncPlay(); }
