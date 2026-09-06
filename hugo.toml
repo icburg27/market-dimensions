@@ -10,7 +10,7 @@ timeout = "60s"
   newsletter = "The Reading"
   repo = "https://github.com/icburg27/vitals-machine"
   raw = "https://raw.githubusercontent.com/icburg27/vitals-machine/main/"
-  subscribe_url = "https://buttondown.com/marketdimensions"
+  subscribe_url = "https://buttondown.com/api/emails/embed-subscribe/marketdimensions"
   disclaimer = "Market Dimensions is research and education, not investment advice. Nothing here is a recommendation to buy or sell anything. The portfolio discussed on this site is a paper experiment — no real money is at stake."
   attestation = "Operated under the AI Formation Governance Standard by The AI Governance Company. Self-governed in public — not third-party certified."
 
