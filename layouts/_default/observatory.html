@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow">Formation Vitals Observatory</div>
+    <h1>{{ .Title }}</h1>
+    <p class="lede muted" style="font-size:1.15rem">{{ .Description }}</p>
+  </header>
+  {{ partial "vitals-strip.html" (dict "compact" false) }}
+  <div class="grid grid-2" style="margin-top:28px">
+    <div>{{ partial "gauge.html" . }}</div>
+    <div class="card">
+      <div class="eyebrow">How to read the strip</div>
+      <dl class="small" style="margin:0">
+        <dt><b>Effective dimension</b></dt><dd class="muted">Participation ratio of the correlation eigenvalues — how many independent directions the twenty stocks actually move in. ~9–10 is wide and differentiated. 2–3 is a fear huddle. Watch the <i>trajectory</i>: slow decay without re-inflation is the 2007 signature.</dd>
+        <dt><b>Mean correlation</b></dt><dd class="muted">Average pairwise ρ over 60 trading days. Tissue tightness. 0.05 is loose; 0.6–0.7 is late 2008.</dd>
+        <dt><b>Vorticity</b></dt><dd class="muted">Share of capital flow that is circulation rather than directed migration (Hodge decomposition of sector-share lead–lag). Below ~0.9 a river is running; above 0.92 the migration is complete and dissolving into rotation.</dd>
+        <dt><b>Separation</b></dt><dd class="muted">Between-cluster ÷ within-cluster distance. Around 1.2 is structured pluralism. Above 1.4 while dimension falls is fusion — the monolith-plus-outcasts shape of a crash.</dd>
+        <dt><b>VIX</b></dt><dd class="muted">Alarm loudness. The geometry remembers what the VIX forgets.</dd>
+        <dt><b>356.69 pair</b></dt><dd class="muted">AVGO ÷ JPM. Both closed at $356.69 on 2026-08-25: a feeding-ground stock and an artery, at parity by accident. A ratio above 1 means the frontier is outrunning the plumbing. Tracked for the ledger's paper claims PAIR-1/PAIR-2; no position exists.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2>The manifold, live</h2>
+  <p class="muted" style="max-width:680px">The same instrument the home page replays for 2008, pointed at now. Frames are weekly; the newest is the last committed metrics run.</p>
+  {{ partial "manifold.html" (dict "mode" "live") }}
+
+  <h2 id="history">History of readings</h2>
+  <p class="muted" style="max-width:680px">Every metrics run the machine has committed. The window is 60 trading days, stepped every 3 sessions. Definitions change only at quarterly review — comparability is the spine.</p>
+  <div class="grid grid-2">
+    <div class="card"><h3 style="font-size:1rem">Effective dimension</h3><div class="chart-wrap"><canvas id="chart-eff_dim" role="img" aria-label="Effective dimension, every reading"></canvas></div><div class="small muted" data-note></div></div>
+    <div class="card"><h3 style="font-size:1rem">Mean pairwise correlation</h3><div class="chart-wrap"><canvas id="chart-mean_corr" role="img" aria-label="Mean pairwise correlation, every reading"></canvas></div><div class="small muted" data-note></div></div>
+    <div class="card"><h3 style="font-size:1rem">Cluster separation</h3><div class="chart-wrap"><canvas id="chart-separation" role="img" aria-label="Cluster separation, every reading"></canvas></div><div class="small muted" data-note></div></div>
+    <div class="card"><h3 style="font-size:1rem">MST length</h3><div class="chart-wrap"><canvas id="chart-mst_len" role="img" aria-label="Minimum spanning tree length, every reading"></canvas></div><div class="small muted" data-note></div></div>
+  </div>
+  <details style="margin-top:18px"><summary>Table view of every reading</summary>
+    <div class="table-wrap"><table><thead><tr><th>date</th><th>eff dim</th><th>mean ρ</th><th>separation</th><th>MST</th><th>vorticity</th></tr></thead><tbody id="metrics-table"></tbody></table></div>
+  </details>
+
+  <h2 id="tripwires">Tripwires</h2>
+  <div class="grid grid-3">
+    <div class="card"><div class="eyebrow">T1 · Migration complete</div><p class="muted small">Vorticity &gt; 0.92. The directed river (Tech and Energy in; Consumer out) has finished and the field has dissolved back into rotation. Not a crash signal — a "the move you were watching is over" signal.</p></div>
+    <div class="card"><div class="eyebrow">T2 · Disease signature</div><p class="muted small">Effective dimension below 75% of its trailing maximum for three consecutive readings. This is what August 2007 looked like, thirteen months before Lehman, while the index made new highs. Needs forty readings of history to compute; armed, fires no earlier than late October 2026.</p></div>
+    <div class="card"><div class="eyebrow">T3 · Fusion</div><p class="muted small">Separation above 1.4 while dimension is falling. The cloud is not splitting into healthy tribes; it is collapsing into a monolith with a few outcasts.</p></div>
+  </div>
+  <p class="small muted" style="margin-top:14px">When a tripwire fires the machine opens an issue in the repo and The Reading sends a note between Saturdays. Current state is read live from <code>data/alerts.json</code>.</p>
+
+  <div class="article" style="margin-top:40px">{{ .Content }}</div>
+</div>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict "manifold" true "gauge" true "charts" true) }}{{ end }}

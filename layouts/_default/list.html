@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="article-head">
+    {{ with .Params.eyebrow }}<div class="eyebrow">{{ . }}</div>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede muted" style="font-size:1.15rem">{{ . }}</p>{{ end }}
+  </header>
+  <div class="article">{{ .Content }}</div>
+  <ul class="post-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li><time>{{ .Date.Format "2006-01-02" }}</time><div><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Description | default .Summary }}</p></div></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict) }}{{ end }}

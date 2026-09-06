@@ -1,0 +1,21 @@
+<div class="viz" data-manifold data-mode="{{ .mode | default "gfc" }}" data-src-live="{{ "data/frames-live.json" | relURL }}" data-src-gfc="{{ "data/replay-gfc.json" | relURL }}" data-src-covid="{{ "data/replay-covid.json" | relURL }}">
+  <div class="viz-head">
+    <h2 class="viz-title">The Breathing Manifold</h2>
+    <div class="seg" role="group" aria-label="Choose a period">
+      <button data-mode="gfc" {{ if ne .mode "live" }}class="on" aria-pressed="true"{{ else }}aria-pressed="false"{{ end }}>2008 replay</button>
+      <button data-mode="live" {{ if eq .mode "live" }}class="on" aria-pressed="true"{{ else }}aria-pressed="false"{{ end }}>Live 2026</button>
+    </div>
+  </div>
+  <div class="legend">
+    <span style="--c:#c98500">Tech</span><span style="--c:#d55181">Financial</span><span style="--c:#3987e5">Consumer</span><span style="--c:#d95926">Energy</span><span style="--c:#9085e9">Industrial</span><span style="--c:#199e70">Health</span><span style="--c:#e4b84a">strand = correlation &gt; 0.35</span>
+  </div>
+  <div class="viz-body"><canvas aria-label="Animated correlation cloud of twenty stocks; stars drift together as effective dimension falls" role="img"></canvas></div>
+  <div class="viz-readout" data-readout></div>
+  <div class="viz-controls">
+    <button data-play>▶ Play</button>
+    <button data-restart title="Restart">↺</button>
+    <button data-speed title="Speed">1×</button>
+    <input type="range" min="0" max="1" step="0.01" value="0" aria-label="Scrub through time">
+  </div>
+  <div class="viz-caption" data-caption></div>
+</div>

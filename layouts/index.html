@@ -1,0 +1,68 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Formation Vitals Observatory</div>
+      <h1>What if we read the market as an organism?</h1>
+      <p class="lede">Not a machine. Not a mood. A living thing — with a pulse, a breath, and a body you can watch from above. Twenty stocks, drawn by how alike they move, become a constellation that widens when the market is calm and huddles when it is afraid. We built an instrument to take its vitals every week. Then we do the part nobody does: we write down what we expect, and grade ourselves in public.</p>
+      <div class="hero-actions">
+        <a class="btn" href="{{ "subscribe/" | relURL }}">Get The Reading — weekly, free</a>
+        <a class="btn ghost" href="{{ "observatory/" | relURL }}">Look through the instrument</a>
+      </div>
+      <p class="small muted" style="margin-top:1.2em">{{ .Site.Params.attestation }} <a href="{{ "about/#governance" | relURL }}">How that works →</a></p>
+    </div>
+    <div>
+      {{ partial "vitals-strip.html" (dict "compact" true) }}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Watch fear from above</div>
+      <h2 style="margin-top:0">Pick a card. Any card. Now watch it breathe.</h2>
+      <p>Each star is a stock. Distance is disagreement: stocks that move together sit close; stocks that live their own lives keep their distance. When the market is well, the constellation is wide and lumpy, full of little tribes. When fear arrives, every star falls toward every other until twenty companies become one trembling object. Here is the trick nobody expects: press play on 2008 and the room starts closing in the summer of 2007 — a full year before Lehman — and stays closed while the index goes on to make new highs. Whether that is a warning or a coincidence is the question this whole site exists to test.</p>
+    </div>
+    {{ partial "manifold.html" (dict "mode" "gfc") }}
+    <p class="small muted" style="margin-top:12px">Real data, precomputed frames. The replay uses a twenty-asset research panel; the live view uses the observatory's core-20 basket, drawn at the same scale. Method and sources in the <a href="{{ "field-guide/manifold/" | relURL }}">Field Guide</a>.</p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="eyebrow">01 · The instrument</div>
+        <h3>A stethoscope for a market</h3>
+        <p class="muted">A small open-source machine takes the market's pulse every week: how much room the stocks keep, how tightly the tissue is bound, which way the capital is migrating. It drafts; a human verdicts. Nothing up the sleeve — the code is public. <a href="{{ "observatory/" | relURL }}">Look through the Observatory →</a></p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">02 · The ledger</div>
+        <h3>We write down what we expect. Then we keep score.</h3>
+        <p class="muted">Every prediction is written down before the fact, with a date it comes due. Grades are append-only — nobody edits a grade, not even us. The ones going wrong stay right where you can see them. <a href="{{ "ledger/" | relURL }}">Read the ledger →</a></p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">03 · The theory</div>
+        <h3>A field guide to a creature nobody knew was one</h3>
+        <p class="muted">Why we read 2008 as a disease and 2020 as an injury. Why diversification is a fair-weather property. What a migration looks like while it's still underway. Seven short pages, heavily illustrated. <a href="{{ "field-guide/" | relURL }}">Open the Field Guide →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Honest by construction</div>
+      <h2 style="margin-top:0">A magician who shows you the trick going wrong.</h2>
+      <p>The paper portfolio exists to test the theory, not to sell it. Eight trading days in, two stocks we'd written off are outrunning the ones we favored, and the 356.69 pair sits a hair under parity — the opposite of what we predicted. Eight days is weather, not climate. But it's already on the ledger, and it's already the subject of the <a href="{{ "blog/the-pruned-are-winning/" | relURL }}">first letter</a>. That's the whole act: wonder in front, receipts behind.</p>
+    </div>
+    <div class="grid grid-2">
+      <div>{{ partial "gauge.html" . }}</div>
+      <div>{{ partial "subscribe-box.html" . }}</div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict "manifold" true "gauge" true) }}{{ end }}

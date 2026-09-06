@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow">Field Guide · {{ printf "%02d" (int .Weight) }}</div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede muted" style="font-size:1.15rem">{{ . }}</p>{{ end }}
+  </header>
+  {{ if .Params.manifold }}<div style="margin-bottom:32px">{{ partial "manifold.html" (dict "mode" .Params.manifold) }}</div>{{ end }}
+  {{ if .Params.gauge }}<div style="margin-bottom:32px">{{ partial "gauge.html" . }}</div>{{ end }}
+  <article class="article">{{ .Content }}</article>
+  <nav class="pager">
+    <span>{{ with .NextInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}</span>
+    <span>{{ with .PrevInSection }}<a href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}</span>
+  </nav>
+</div>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict "manifold" (isset .Params "manifold") "gauge" (isset .Params "gauge")) }}{{ end }}

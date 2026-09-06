@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="article-head">
+    {{ with .Params.eyebrow }}<div class="eyebrow">{{ . }}</div>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lede muted" style="font-size:1.15rem">{{ . }}</p>{{ end }}
+  </header>
+  <article class="article">{{ .Content }}</article>
+</div>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict) }}{{ end }}

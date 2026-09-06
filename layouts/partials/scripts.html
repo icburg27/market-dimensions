@@ -1,0 +1,6 @@
+{{ $md := resources.Get "js/md.js" | minify | fingerprint }}
+<script src="{{ $md.RelPermalink }}"></script>
+{{ if .manifold }}{{ $m := resources.Get "js/manifold.js" | minify | fingerprint }}<script src="{{ $m.RelPermalink }}"></script>{{ end }}
+{{ if .gauge }}{{ $g := resources.Get "js/gauge.js" | minify | fingerprint }}<script src="{{ $g.RelPermalink }}"></script>{{ end }}
+{{ if .charts }}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>{{ $c := resources.Get "js/charts.js" | minify | fingerprint }}<script src="{{ $c.RelPermalink }}"></script>{{ end }}
+{{ if .ledger }}{{ $l := resources.Get "js/ledger.js" | minify | fingerprint }}<script src="{{ $l.RelPermalink }}"></script>{{ end }}

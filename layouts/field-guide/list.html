@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow">Field Guide</div>
+    <h1>{{ .Title }}</h1>
+    <p class="lede muted" style="font-size:1.15rem">{{ .Description }}</p>
+  </header>
+  <div class="article">{{ .Content }}</div>
+  <div class="guide-grid">
+    {{ range .Pages.ByWeight }}
+    <div class="guide-card"><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Description }}</p></div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict) }}{{ end }}

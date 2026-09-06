@@ -1,0 +1,38 @@
+name: build-and-deploy
+on:
+  push: { branches: [main] }
+  workflow_dispatch:
+  schedule:
+    - cron: "30 14 * * 6"   # Sat 14:30 UTC — after vitals-machine weekly-metrics (13:00 UTC)
+permissions: { contents: write, pages: write, id-token: write }
+concurrency: { group: pages, cancel-in-progress: false }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r tools/requirements.txt
+      - name: Refresh frames + baked data from vitals-machine
+        run: python tools/build_frames.py
+      - name: Commit refreshed data (scheduled runs only)
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "observatory-bot"; git config user.email "bot@users.noreply.github.com"
+          git add static/data && (git commit -m "data: weekly frame refresh $(date -u +%F)" && git push) || echo "no data change"
+      - uses: peaceiris/actions-hugo@v3
+        with: { hugo-version: "0.147.0", extended: true }
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Build (custom domain via SITE_URL variable, else the Pages URL)
+        run: hugo --minify --baseURL "${{ vars.SITE_URL || format('{0}/', steps.pages.outputs.base_url) }}"
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: public }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: ${{ steps.deployment.outputs.page_url }} }
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

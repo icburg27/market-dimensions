@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow">The ledger</div>
+    <h1>{{ .Title }}</h1>
+    <p class="lede muted" style="font-size:1.15rem">{{ .Description }}</p>
+  </header>
+  <div class="callout gold" style="max-width:760px">
+    <b>Grades are append-only.</b> Nobody edits a grade — not the machine, not the CEO. Disputes are logged <i>beside</i> grades, never over them. The file you see here is <code>ledger/grades.csv</code>, rendered as found; its <a href="{{ .Site.Params.repo }}/commits/main/ledger/grades.csv">commit history</a> is the audit trail.
+  </div>
+  <div class="article">{{ .Content }}</div>
+  <p class="small muted" id="ledger-meta">loading the ledger…</p>
+  <div id="ledger"></div>
+  <details style="margin-top:28px"><summary>Raw grades.csv</summary><pre id="grades-raw"></pre></details>
+</div>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict "ledger" true) }}{{ end }}

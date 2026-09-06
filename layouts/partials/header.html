@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ "" | relURL }}">{{ partial "mark.html" . }}<span>Market Dimensions</span></a>
+    <nav class="nav" aria-label="Primary">
+      {{ $cur := . }}
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relURL }}" {{ if or ($cur.IsMenuCurrent "main" .) (hasPrefix $cur.RelPermalink .URL) }}class="active"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+      <a class="cta" href="{{ "subscribe/" | relURL }}">Get The Reading</a>
+    </nav>
+  </div>
+  <nav class="mobile-nav" aria-label="Primary mobile">
+    {{ range .Site.Menus.main }}<a href="{{ .URL | relURL }}">{{ .Name }}</a>{{ end }}
+  </nav>
+</header>

@@ -1,0 +1,26 @@
+<footer class="site-footer">
+{{ partial "disclaimer.html" . }}
+  <div class="wrap" style="margin-top:36px">
+    <div class="cols">
+      <div>
+        <div class="attest">{{ .Site.Params.attestation }}</div>
+        <div class="foundation">Receipts: <a href="{{ .Site.Params.repo }}">the machine</a> · <a href="{{ .Site.Params.repo }}/blob/main/ledger/grades.csv">the append-only grade ledger</a> · <a href="{{ .Site.Params.repo }}/blob/main/ledger/predictions.yml">pre-registered predictions</a></div>
+        <div class="foundation">© {{ now.Year }} Market Dimensions. Content CC BY-NC 4.0 unless noted. Pipeline code licensed per its repository.</div>
+      </div>
+      <div>
+        <div class="eyebrow">Property</div>
+        <div><a href="{{ "observatory/" | relURL }}">Observatory</a></div>
+        <div><a href="{{ "readings/" | relURL }}">The Reading</a></div>
+        <div><a href="{{ "ledger/" | relURL }}">Ledger</a></div>
+        <div><a href="{{ "field-guide/" | relURL }}">Field Guide</a></div>
+      </div>
+      <div>
+        <div class="eyebrow">Elsewhere</div>
+        <div><a href="{{ "blog/" | relURL }}">Blog</a></div>
+        <div><a href="{{ "about/" | relURL }}">About &amp; governance</a></div>
+        <div><a href="{{ "subscribe/" | relURL }}">Subscribe</a></div>
+        <div><a href="{{ "index.xml" | relURL }}">RSS</a></div>
+      </div>
+    </div>
+  </div>
+</footer>

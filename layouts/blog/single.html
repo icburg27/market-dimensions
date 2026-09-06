@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow">Blog</div>
+    <h1>{{ .Title }}</h1>
+    <div class="meta">{{ .Date.Format "January 2, 2006" }}{{ with .Params.author }} · {{ . }}{{ end }} · {{ .ReadingTime }} min read</div>
+    {{ with .Description }}<p class="kicker" style="margin-top:14px">{{ . }}</p>{{ end }}
+  </header>
+  <article class="article">{{ .Content }}</article>
+  <div style="max-width:720px;margin-top:48px">{{ partial "subscribe-box.html" . }}</div>
+</div>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict "manifold" (isset .Params "manifold")) }}{{ end }}
