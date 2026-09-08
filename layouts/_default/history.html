@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow">Historical perspective</div>
+    <h1>{{ .Title }}</h1>
+    <p class="lede muted" style="font-size:1.15rem">{{ .Description }}</p>
+  </header>
+  {{ partial "flood.html" . }}
+  <article class="article" style="margin-top:36px">{{ .Content }}</article>
+</div>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict "flood" true) }}{{ end }}

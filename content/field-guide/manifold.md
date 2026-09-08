@@ -1,6 +1,6 @@
 ---
 title: "The breathing manifold"
-weight: 2
+weight: 4
 manifold: gfc
 description: "How the constellation is drawn, what the strands mean, and why it is drawn at a fixed scale so that shrinkage on screen is shrinkage in the data."
 ---

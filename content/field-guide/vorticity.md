@@ -1,6 +1,6 @@
 ---
 title: "Vorticity: watching a migration"
-weight: 5
+weight: 3
 description: "Capital as a conserved fluid. Rivers versus vortices, why panic is not a flow, and what the current reading of 0.84 and falling means."
 ---
 

@@ -8,7 +8,7 @@ description: "A short letter every Saturday, a full reading once a month, and a 
 
 ## What you'll get
 
-**The weekly reading, every Saturday.** The machine finishes its metrics run Saturday morning; by afternoon you have a short letter: what the constellation did this week, which stars drifted toward which, whether the room got wider or tighter — in plain language, with one picture worth keeping. Five minutes. Curiosity, not homework.
+**The weekly reading, every Saturday.** The machine finishes its metrics run Saturday morning; by afternoon you have a short letter: where the organism fed this week, where the feeding died back, where there was more food than we thought — and the vitals underneath, with one picture worth keeping. Five minutes. Curiosity, not homework.
 
 **The monthly reading, on the last Saturday.** The full physical: the machine's vitals card and draft report, followed by the human verdict — what the numbers mean, what changed, what we're watching, and how every registered prediction is tracking. Published after the monthly issue in the repository is resolved, so what you read is what was signed off.
 

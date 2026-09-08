@@ -89,6 +89,50 @@ def frames_for(panel, sectors, start, end, step=STEP):
                 embedding="classical MDS, Procrustes-aligned (rotation only)",
                 frames=frames)
 
+ENTRY = "2026-08-25"
+ARMS = {"feeding": ["TSM", "VRT", "AVGO", "ANET", "ETN"], "pocket": ["NVDA", "AMD"], "pruned": ["VST", "CEG"], "plumbing": ["JPM"],
+        "controls": ["SMCI", "WMT", "AAPL"]}
+POCKET = ["NVDA", "AMD"]
+
+def frontier_scores(r60, core, watch):
+    """score = trailing-60d corr to the pocket mean minus mean corr to the core body (vitals-machine definition)."""
+    pm = r60[POCKET].mean(axis=1); out = {}
+    for t in watch + POCKET:
+        if t not in r60: continue
+        cp = r60[t].corr(r60[[p for p in POCKET if p != t][0]]) if t in POCKET else r60[t].corr(pm)
+        cb = np.mean([r60[t].corr(r60[b]) for b in core if b != t and b in r60])
+        out[t] = float(cp - cb)
+    return out
+
+def feeding_report(panel):
+    core = [t for s in SECTORS_CORE.values() for t in s]
+    watch = ["TSM", "VRT", "AVGO", "ETN", "SMCI", "ANET", "VST", "CEG"]
+    px = panel.ffill(limit=3); lr = np.log(px / px.shift(1))
+    now = frontier_scores(lr.iloc[-60:], core, watch); prev = frontier_scores(lr.iloc[-65:-5], core, watch)
+    last = px.iloc[-1]; d20 = px.iloc[-21] if len(px) > 21 else px.iloc[0]; d5 = px.iloc[-6] if len(px) > 6 else px.iloc[0]
+    entry = px.loc[ENTRY] if pd.Timestamp(ENTRY) in px.index else None
+    rows = []
+    for t, sc in sorted(now.items(), key=lambda x: -x[1]):
+        rows.append(dict(ticker=t, score=round(sc, 3), d_score=round(sc - prev.get(t, sc), 3),
+                         r_1w=round(float(last[t] / d5[t] - 1) * 100, 2), r_4w=round(float(last[t] / d20[t] - 1) * 100, 2),
+                         r_entry=(round(float(last[t] / entry[t] - 1) * 100, 2) if entry is not None and pd.notna(entry.get(t)) else None),
+                         arm=next((k for k, v in ARMS.items() if t in v), "pocket" if t in POCKET else "watch")))
+    arms = {}
+    for k, names in ARMS.items():
+        have = [t for t in names if t in px.columns and entry is not None and pd.notna(entry.get(t)) and pd.notna(last.get(t))]
+        if have: arms[k] = dict(names=have, r_entry=round(float(((last[have] / entry[have]) - 1).mean() * 100), 2),
+                                r_4w=round(float(((last[have] / d20[have]) - 1).mean() * 100), 2))
+    body = dict(r_4w=round(float(((last[core] / d20[core]) - 1).mean() * 100), 2),
+                r_entry=(round(float(((last[core] / entry[core]) - 1).mean() * 100), 2) if entry is not None else None))
+    # plain-language buckets, by rule (stated in the Field Guide): feeding = score up & 4w return > body; dieback = 4w return < body-2 & score falling;
+    # more-food-than-we-thought = pruned arm beating the feeding arm since entry
+    feeding_now = [r["ticker"] for r in rows if r["d_score"] > 0 and r["r_4w"] > body["r_4w"]]
+    dieback = [r["ticker"] for r in rows if r["r_4w"] < body["r_4w"] - 2 and r["d_score"] < 0]
+    surprise = [r["ticker"] for r in rows if r["arm"] == "pruned" and r["r_entry"] is not None and arms.get("feeding") and r["r_entry"] > arms["feeding"]["r_entry"]]
+    return dict(asof=str(px.index[-1].date()), entry=ENTRY, pocket=POCKET, ranking=rows, arms=arms, body=body,
+                feeding_now=feeding_now, dieback=dieback, surprise=surprise,
+                rule="feeding = score rising and 4-week return above the body; dieback = 4-week return more than 2 pts below the body with score falling; surprise = a pruned name beating the feeding arm since entry")
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     # ---- live (vitals-machine) ----
@@ -112,6 +156,10 @@ def main():
         json.dump(rp, open(os.path.join(OUT, f"replay-{name}.json"), "w"), separators=(",", ":"))
         dims = [f["dim"] for f in rp["frames"]]
         print(name, len(rp["frames"]), "frames; dim max", max(dims), "min", min(dims))
+    # ---- feeding ground: where the organism is feeding this week ----
+    feeding = feeding_report(panel)
+    json.dump(feeding, open(os.path.join(OUT, "feeding.json"), "w"), indent=1)
+    print("feeding asof", feeding["asof"], "top", feeding["ranking"][0]["ticker"])
     # ---- baked fallback ----
     baked = dict(
         built=dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%MZ"),

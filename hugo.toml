@@ -5,14 +5,14 @@ enableRobotsTXT = true
 timeout = "60s"
 
 [params]
-  tagline = "What if we read the market as an organism? A live reading of its body, every week."
+  tagline = "The stock market, read as a slime mold. Where it is feeding this week — and what that says about where it is going."
   instrument = "Formation Vitals Observatory"
   newsletter = "The Reading"
   repo = "https://github.com/icburg27/vitals-machine"
   raw = "https://raw.githubusercontent.com/icburg27/vitals-machine/main/"
   subscribe_url = "https://buttondown.com/api/emails/embed-subscribe/marketdimensions"
   disclaimer = "Market Dimensions is research and education, not investment advice. Nothing here is a recommendation to buy or sell anything. The portfolio discussed on this site is a paper experiment — no real money is at stake."
-  attestation = "Operated under the AI Formation Governance Standard by The AI Governance Company. Self-governed in public — not third-party certified."
+  attestation = "An instrument of The AI Governance Company, run in the open: the machine drafts, a person signs, every call is graded."
 
 [markup.goldmark.renderer]
   unsafe = true
@@ -22,29 +22,33 @@ timeout = "60s"
 
 [menu]
   [[menu.main]]
-    name = "Observatory"
-    url = "/observatory/"
+    name = "Feeding"
+    url = "/feeding/"
     weight = 10
   [[menu.main]]
-    name = "Readings"
-    url = "/readings/"
+    name = "History"
+    url = "/history/"
     weight = 20
   [[menu.main]]
-    name = "Ledger"
-    url = "/ledger/"
+    name = "Observatory"
+    url = "/observatory/"
     weight = 30
   [[menu.main]]
     name = "Field Guide"
     url = "/field-guide/"
     weight = 40
   [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
+    name = "Readings"
+    url = "/readings/"
     weight = 50
   [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Ledger"
+    url = "/ledger/"
     weight = 60
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 70
 
 [taxonomies]
   tag = "tags"

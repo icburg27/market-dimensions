@@ -1,0 +1,162 @@
+{
+ "asof": "2026-09-04",
+ "entry": "2026-08-25",
+ "pocket": [
+  "NVDA",
+  "AMD"
+ ],
+ "ranking": [
+  {
+   "ticker": "TSM",
+   "score": 0.881,
+   "d_score": -0.01,
+   "r_1w": 2.73,
+   "r_4w": 2.13,
+   "r_entry": 2.77,
+   "arm": "feeding"
+  },
+  {
+   "ticker": "VRT",
+   "score": 0.836,
+   "d_score": -0.006,
+   "r_1w": 9.12,
+   "r_4w": 3.01,
+   "r_entry": 9.74,
+   "arm": "feeding"
+  },
+  {
+   "ticker": "ETN",
+   "score": 0.731,
+   "d_score": -0.002,
+   "r_1w": 2.0,
+   "r_4w": -8.43,
+   "r_entry": 0.52,
+   "arm": "feeding"
+  },
+  {
+   "ticker": "AVGO",
+   "score": 0.717,
+   "d_score": -0.038,
+   "r_1w": -2.95,
+   "r_4w": -16.29,
+   "r_entry": 0.34,
+   "arm": "feeding"
+  },
+  {
+   "ticker": "ANET",
+   "score": 0.704,
+   "d_score": 0.085,
+   "r_1w": -0.82,
+   "r_4w": 2.75,
+   "r_entry": 1.49,
+   "arm": "feeding"
+  },
+  {
+   "ticker": "NVDA",
+   "score": 0.647,
+   "d_score": -0.052,
+   "r_1w": 5.89,
+   "r_4w": 2.85,
+   "r_entry": 8.16,
+   "arm": "pocket"
+  },
+  {
+   "ticker": "AMD",
+   "score": 0.608,
+   "d_score": -0.059,
+   "r_1w": 2.58,
+   "r_4w": -1.22,
+   "r_entry": -0.35,
+   "arm": "pocket"
+  },
+  {
+   "ticker": "SMCI",
+   "score": 0.582,
+   "d_score": -0.019,
+   "r_1w": 6.77,
+   "r_4w": 27.3,
+   "r_entry": 2.94,
+   "arm": "controls"
+  },
+  {
+   "ticker": "VST",
+   "score": 0.519,
+   "d_score": -0.021,
+   "r_1w": 8.91,
+   "r_4w": 6.19,
+   "r_entry": 7.38,
+   "arm": "pruned"
+  },
+  {
+   "ticker": "CEG",
+   "score": 0.512,
+   "d_score": -0.045,
+   "r_1w": 8.03,
+   "r_4w": 10.73,
+   "r_entry": 7.4,
+   "arm": "pruned"
+  }
+ ],
+ "arms": {
+  "feeding": {
+   "names": [
+    "TSM",
+    "VRT",
+    "AVGO",
+    "ANET",
+    "ETN"
+   ],
+   "r_entry": 2.97,
+   "r_4w": -3.37
+  },
+  "pocket": {
+   "names": [
+    "NVDA",
+    "AMD"
+   ],
+   "r_entry": 3.9,
+   "r_4w": 0.81
+  },
+  "pruned": {
+   "names": [
+    "VST",
+    "CEG"
+   ],
+   "r_entry": 7.39,
+   "r_4w": 8.46
+  },
+  "plumbing": {
+   "names": [
+    "JPM"
+   ],
+   "r_entry": 0.55,
+   "r_4w": 0.33
+  },
+  "controls": {
+   "names": [
+    "SMCI",
+    "WMT",
+    "AAPL"
+   ],
+   "r_entry": 2.63,
+   "r_4w": 8.41
+  }
+ },
+ "body": {
+  "r_4w": 0.88,
+  "r_entry": -0.55
+ },
+ "feeding_now": [
+  "ANET"
+ ],
+ "dieback": [
+  "ETN",
+  "AVGO",
+  "AMD"
+ ],
+ "surprise": [
+  "VST",
+  "CEG"
+ ],
+ "rule": "feeding = score rising and 4-week return above the body; dieback = 4-week return more than 2 pts below the body with score falling; surprise = a pruned name beating the feeding arm since entry"
+}

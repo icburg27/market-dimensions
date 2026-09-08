@@ -1,6 +1,6 @@
 ---
 title: "Feeding grounds, arteries, and the 356.69 pair"
-weight: 6
+weight: 2
 description: "The frontier detector, the artery test, and a natural experiment two stocks handed us by closing at the same price."
 ---
 

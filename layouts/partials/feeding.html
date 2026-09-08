@@ -1,0 +1,16 @@
+<div class="viz" data-feeding data-src="{{ "data/feeding.json" | relURL }}">
+  <div class="viz-head"><h2 class="viz-title">Where it's feeding</h2><span class="muted small" data-asof>loading…</span></div>
+  <div class="legend"><span style="--c:#e4b84a">feeding</span><span style="--c:#e5647a">dieback</span><span style="--c:#a78bfa">more food than we thought</span><span style="--c:#8f86a8">quiet</span><span style="--c:#e4b84a">strand = moving toward the pocket</span></div>
+  <div class="viz-body"><canvas role="img" aria-label="Stocks drawn at a distance from the AI growth pocket according to how closely they move with it"></canvas></div>
+  <div class="grid grid-3" style="padding:6px 20px 18px;gap:14px">
+    <div><div class="eyebrow" style="color:#e4b84a">Feeding now</div><ul class="small" style="margin:0;padding-left:18px" data-feeding-now></ul></div>
+    <div><div class="eyebrow" style="color:#e5647a">Dieback</div><ul class="small" style="margin:0;padding-left:18px" data-dieback></ul></div>
+    <div><div class="eyebrow" style="color:#a78bfa">More food than we thought</div><ul class="small" style="margin:0;padding-left:18px" data-surprise></ul></div>
+  </div>
+  {{ if .table }}
+  <details style="padding:0 20px 18px"><summary class="small">The whole ranking, with the rule</summary>
+    <div class="table-wrap" style="margin-top:10px"><table><thead><tr><th>name</th><th>score</th><th>Δ w/w</th><th>1w</th><th>4w</th><th>since 8/25</th><th>arm</th><th>state</th></tr></thead><tbody data-table></tbody></table></div>
+    <p class="small muted" style="margin:10px 0 0">Score = trailing-60-day correlation to the pocket (NVDA + AMD) minus mean correlation to the core-20 body. Feeding = score rising and four-week move above the body. Dieback = four-week move more than two points below the body with score falling. More food than we thought = a name we had written off as pruned beating the feeding arm since the paper experiment opened. Paper experiment throughout; research, not advice.</p>
+  </details>
+  {{ end }}
+</div>

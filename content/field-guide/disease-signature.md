@@ -1,6 +1,6 @@
 ---
 title: "2007 as a disease, 2020 as an injury"
-weight: 4
+weight: 6
 manifold: covid
 description: "The dissection. Why we read the geometry of 2007 as a disease that showed thirteen months before Lehman, and 2020 as an injury that gave no warning at all."
 ---

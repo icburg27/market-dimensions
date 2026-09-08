@@ -1,5 +1,5 @@
 ---
-title: "Storms, sunlight, and the three laws"
+title: "When the lens goes blind"
 weight: 7
 description: "What the geometry does and doesn't say about timing — mostly that it can't see during a storm, and that diversification is a fair-weather property."
 ---

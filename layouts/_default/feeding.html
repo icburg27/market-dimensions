@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow">This week</div>
+    <h1>{{ .Title }}</h1>
+    <p class="lede muted" style="font-size:1.15rem">{{ .Description }}</p>
+  </header>
+  {{ partial "feeding.html" (dict "table" true) }}
+  <div class="article" style="margin-top:36px">{{ .Content }}</div>
+</div>
+{{ end }}
+{{ define "scripts" }}{{ partial "scripts.html" (dict "feeding" true) }}{{ end }}

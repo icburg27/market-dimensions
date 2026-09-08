@@ -10,17 +10,13 @@ Market Dimensions begins with a question that sounds like a parlor trick and tur
 
 The instrument is called the **Formation Vitals Observatory**. It is a self-running pipeline on GitHub Actions that harvests closes, computes the geometry, arms three tripwires, and drafts a monthly reading. The weekly letter is **The Reading** — short every Saturday, the full physical once a month. The theory is taught in the [Field Guide](/field-guide/). The predictions and their grades live in the [Ledger](/ledger/).
 
-## Why it grades itself in public {#governance}
+## The receipts {#governance}
 
-Market Dimensions is also a demonstration. It is operated by [The AI Governance Company](https://aigovernanceco.com) — which certifies AI systems against the **AI Formation Governance Standard** — under that same standard. We don't tell people what a governed autonomous system looks like; we run one where you can watch.
+Behind the site is a small machine and a person. The machine harvests prices, computes the geometry, and drafts each week's reading; the person reads it and signs it. It is run by [The AI Governance Company](https://aigovernanceco.com), whose work is certifying AI systems against the **AI Formation Governance Standard**, and it is run under that standard — which mostly means we keep receipts you can check.
 
 Concretely, that means: the machine drafts and a named human verdicts; every prediction is pre-registered with a due date and a named grader; grades are append-only and disputes are logged beside them, never over them; metric definitions change only at quarterly review so readings stay comparable; and the entire pipeline, its data, and its ledger are public, with commit history as the audit trail. The receipts are the [repository](https://github.com/icburg27/vitals-machine) and the [grade ledger](https://github.com/icburg27/vitals-machine/blob/main/ledger/grades.csv).
 
 The Observatory is deliberately a standalone brand rather than a page on TAGC's site. Attesting independent systems is TAGC's actual product. This instrument is *not* one of them: TAGC operates it, so TAGC cannot independently certify it, and we do not claim it is certified. What we claim is narrower — it is run under the same standard, with the same receipts, in public, so you can judge the standard by watching it. If the theory takes lumps — and we have said from the start that a losing grade is information, not failure — the lumps land here, on the instrument, where they belong.
-
-## The four rooms of TAGC
-
-The Observatory is one of four: the **Observatory** (this — a governed instrument running in public), the **Authority** (certification against the AI Formation Governance Standard), the **Laboratory** (where governed agent systems are built and stress-tested), and the **Engine** (the formation methodology itself). *Assurance for systems that change.*
 
 ## Who
 

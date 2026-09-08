@@ -1,6 +1,6 @@
 ---
 title: "Effective dimension is breathing room"
-weight: 3
+weight: 5
 gauge: true
 description: "The headline vital. How it is computed, what the levels mean, and why the trajectory matters more than the number."
 ---
