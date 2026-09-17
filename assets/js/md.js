@@ -143,7 +143,7 @@
     if (al) al.innerHTML = alerts.length
       ? `<span style="color:var(--warn)">⚠ ${alerts.length} tripwire${alerts.length > 1 ? "s" : ""} fired</span> — <a href="${(window.MD && MD.base) || "/"}observatory/#tripwires">details</a>`
       : "tripwires: none armed-and-fired · T1 vorticity · T2 disease · T3 fusion";
-    setAsOf(`${L.live ? "Live from the repo" : "Baked at build" + (L.built ? " " + L.built : "")} · data through <b>${l.asof}</b> · 60-day window, core-20 basket`, !L.live);
+    setAsOf(`${L.live ? "Live from the repo" : "Baked at build" + (L.built ? " " + L.built : "")} · data through <b>${l.asof}</b> · weekly reading · 60-day window, core-20 basket`, !L.live);
     function setAsOf(html, stale) {
       const a = document.getElementById("vitals-asof"), dot = document.getElementById("live-dot");
       if (a) a.innerHTML = html; if (dot) dot.classList.toggle("stale", !!stale);
