@@ -63,7 +63,7 @@
       const li = (arr, st) => arr.length ? arr.map(tk => { const r = d.ranking.find(x => x.ticker === tk); return `<li><b>${tk}</b> — score ${r.score.toFixed(2)} (${r.d_score >= 0 ? "+" : ""}${r.d_score.toFixed(2)} w/w), ${r.r_4w >= 0 ? "+" : ""}${r.r_4w.toFixed(1)}% in four weeks${r.r_entry != null ? `, ${r.r_entry >= 0 ? "+" : ""}${r.r_entry.toFixed(1)}% since entry` : ""}</li>`; }).join("") : `<li class="muted">none this week</li>`;
       const F = q("[data-feeding-now]"), D = q("[data-dieback]"), S = q("[data-surprise]"), T = q("[data-table]"), A = q("[data-asof]");
       if (F) F.innerHTML = li(d.feeding_now); if (D) D.innerHTML = li(d.dieback); if (S) S.innerHTML = li(d.surprise);
-      if (A) A.textContent = `Data through ${d.asof}. Body (core-20) four-week move ${d.body.r_4w >= 0 ? "+" : ""}${d.body.r_4w}%.`;
+      if (A) A.textContent = `Data through ${d.asof} — the same reading as the vitals. Body (core-20) four-week move ${d.body.r_4w >= 0 ? "+" : ""}${d.body.r_4w}%.`;
       if (T) T.innerHTML = d.ranking.map(r => { const st = stateOf(d, r); return `<tr><td><b>${r.ticker}</b></td><td class="num">${r.score.toFixed(3)}</td><td class="num">${r.d_score >= 0 ? "+" : ""}${r.d_score.toFixed(3)}</td><td class="num">${r.r_1w >= 0 ? "+" : ""}${r.r_1w}%</td><td class="num">${r.r_4w >= 0 ? "+" : ""}${r.r_4w}%</td><td class="num">${r.r_entry == null ? "—" : (r.r_entry >= 0 ? "+" : "") + r.r_entry + "%"}</td><td>${r.arm}</td><td><span class="grade" style="background:${COL[st]}22;color:${COL[st]}">${WORDS[st]}</span></td></tr>`; }).join("");
     }
   }
