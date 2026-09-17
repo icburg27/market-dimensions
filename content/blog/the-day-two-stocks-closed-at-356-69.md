@@ -25,7 +25,7 @@ We wrote the expectation down before looking, because that's the house rule. Two
 
 **In a clench** — if effective dimension ever collapses below 4, the huddle state — the ratio should *fall*, because panic is when everyone suddenly remembers they love plumbing.
 
-The first claim is standing and gets checked continuously. The second is conditional; with dimension currently at 8.68, deep in sunlight, it may not be testable for a long time. Good. Some instruments you build hoping never to use.
+The first claim is standing and gets checked continuously. The second is conditional; with dimension currently at 8.66, deep in sunlight, it may not be testable for a long time. Good. Some instruments you build hoping never to use.
 
 ## The scoreboard so far, and why it's a lesson in patience
 
@@ -33,11 +33,15 @@ This post was drafted a week ago, and I'm leaving the draft's own history in it,
 
 Two weeks after entry, the ratio sat a hair *under* parity — 0.998. The direction was against us. We [wrote that down](/blog/the-pruned-are-winning/) and published it, because the rule of the house is that early tension goes out the week it appears rather than in February with a story attached.
 
-Three weeks in, the ratio is **1.024** — above parity, in the direction the claim predicted, in exactly the sunlight conditions the claim specified.
+A week later it was **1.024** — above parity, in the direction the claim predicted, in exactly the sunlight conditions the claim specified.
 
-So were we wrong, then right? No. We were *noisy, then noisy*. A ratio wobbling half a percent either side of parity across three weeks is not evidence of anything; it is the ordinary tremor of two large stocks doing their jobs. If we had announced vindication today, we'd have been making precisely the mistake we accused the pendulum crowd of — reading a still as a trend. The claim comes due in February, and it comes due with six monthly readings behind it, because that is the shortest span over which this question can be honestly asked.
+At the latest reading it is **0.995**. Back under.
 
-What we'll note is that the conditions have shifted a little underneath it: dimension has eased to 8.68, and the VIX has climbed from 14.5 at entry to just under 18. Still sunlight. Slightly less still.
+Three readings. Three directions. If we had written a paragraph of vindication on the middle one, the third would have made a fool of it — and that is precisely the mistake we accuse the pendulum crowd of making: reading a still as a trend. What the ratio has actually done is wobble half a percent either side of a line, which is the ordinary tremor of two large stocks doing their jobs. It is not evidence. It is weather.
+
+The claim comes due in February, with six monthly readings behind it, because that is the shortest span over which this question can be honestly asked.
+
+What we'll note is that the conditions have shifted a little underneath it: dimension has eased to 8.66, and the VIX has climbed from 14.5 at entry to around 18. Still sunlight. Slightly less still.
 
 The live number sits on the [Observatory](/observatory/) strip alongside the other vitals — a tiny two-body constellation, the frontier and the artery, orbiting a parity line they happened to share on one August afternoon. Every Saturday the machine reads it again. Every reading gets kept.
 
