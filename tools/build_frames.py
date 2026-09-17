@@ -137,6 +137,11 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     # ---- live (vitals-machine) ----
     panel = pd.read_csv(io.StringIO(fetch("data/panel.csv")), index_col=0, parse_dates=True)
+    # One clock: the site reads the panel only as far as the machine's last computed
+    # vitals reading, so feeding, frames and the vitals strip all share an as-of date.
+    vitals_asof = json.loads(fetch("data/latest.json"))["asof"]
+    panel = panel.loc[:vitals_asof]
+    print("clock: vitals asof", vitals_asof, "| panel truncated to", str(panel.index[-1].date()))
     live = frames_for(panel, SECTORS_CORE, start="2000-01-01", end="2100-01-01", step=STEP)
     live["source"] = RAW + "data/panel.csv"
     json.dump(live, open(os.path.join(OUT, "frames-live.json"), "w"), separators=(",", ":"))
