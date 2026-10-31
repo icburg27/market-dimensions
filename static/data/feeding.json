@@ -1,5 +1,5 @@
 {
- "asof": "2026-10-23",
+ "asof": "2026-10-30",
  "entry": "2026-08-25",
  "pocket": [
   "NVDA",
@@ -8,92 +8,92 @@
  "ranking": [
   {
    "ticker": "TSM",
-   "score": 0.901,
-   "d_score": 0.08,
-   "r_1w": 0.78,
-   "r_4w": -7.26,
-   "r_entry": 0.42,
+   "score": 0.994,
+   "d_score": 0.093,
+   "r_1w": -3.91,
+   "r_4w": -14.21,
+   "r_entry": -3.5,
    "arm": "feeding"
   },
   {
    "ticker": "ETN",
-   "score": 0.864,
-   "d_score": 0.051,
-   "r_1w": -7.1,
-   "r_4w": -16.18,
-   "r_entry": -9.6,
+   "score": 0.889,
+   "d_score": 0.025,
+   "r_1w": -0.19,
+   "r_4w": -15.55,
+   "r_entry": -9.77,
    "arm": "feeding"
   },
   {
    "ticker": "ANET",
-   "score": 0.761,
-   "d_score": 0.072,
-   "r_1w": -3.11,
-   "r_4w": -16.56,
-   "r_entry": -8.73,
-   "arm": "feeding"
-  },
-  {
-   "ticker": "VRT",
-   "score": 0.757,
-   "d_score": 0.066,
-   "r_1w": -6.92,
-   "r_4w": -21.65,
-   "r_entry": -23.22,
-   "arm": "feeding"
-  },
-  {
-   "ticker": "SMCI",
-   "score": 0.715,
-   "d_score": 0.013,
-   "r_1w": 5.72,
-   "r_4w": -21.01,
-   "r_entry": -11.83,
-   "arm": "controls"
-  },
-  {
-   "ticker": "AVGO",
-   "score": 0.626,
-   "d_score": 0.063,
-   "r_1w": -2.52,
-   "r_4w": -7.52,
-   "r_entry": -8.61,
+   "score": 0.849,
+   "d_score": 0.088,
+   "r_1w": -3.18,
+   "r_4w": -18.17,
+   "r_entry": -11.64,
    "arm": "feeding"
   },
   {
    "ticker": "NVDA",
-   "score": 0.615,
-   "d_score": 0.032,
-   "r_1w": -2.43,
-   "r_4w": -5.57,
-   "r_entry": -0.36,
+   "score": 0.751,
+   "d_score": 0.136,
+   "r_1w": -4.21,
+   "r_4w": -13.26,
+   "r_entry": -4.55,
    "arm": "pocket"
+  },
+  {
+   "ticker": "SMCI",
+   "score": 0.749,
+   "d_score": 0.034,
+   "r_1w": -6.28,
+   "r_4w": -26.43,
+   "r_entry": -17.37,
+   "arm": "controls"
   },
   {
    "ticker": "AMD",
-   "score": 0.566,
-   "d_score": 0.007,
-   "r_1w": -4.48,
-   "r_4w": -17.41,
-   "r_entry": 8.14,
+   "score": 0.721,
+   "d_score": 0.155,
+   "r_1w": -3.7,
+   "r_4w": -20.78,
+   "r_entry": 4.14,
    "arm": "pocket"
   },
   {
-   "ticker": "CEG",
-   "score": 0.522,
-   "d_score": 0.021,
-   "r_1w": -6.55,
-   "r_4w": -2.15,
-   "r_entry": -8.2,
-   "arm": "pruned"
+   "ticker": "AVGO",
+   "score": 0.719,
+   "d_score": 0.093,
+   "r_1w": -0.89,
+   "r_4w": -8.15,
+   "r_entry": -9.43,
+   "arm": "feeding"
+  },
+  {
+   "ticker": "VRT",
+   "score": 0.705,
+   "d_score": -0.052,
+   "r_1w": 16.98,
+   "r_4w": -8.5,
+   "r_entry": -10.19,
+   "arm": "feeding"
   },
   {
    "ticker": "VST",
-   "score": 0.449,
-   "d_score": 0.009,
-   "r_1w": -8.51,
-   "r_4w": 3.55,
-   "r_entry": 1.54,
+   "score": 0.601,
+   "d_score": 0.152,
+   "r_1w": -3.22,
+   "r_4w": -0.53,
+   "r_entry": -1.73,
+   "arm": "pruned"
+  },
+  {
+   "ticker": "CEG",
+   "score": 0.51,
+   "d_score": -0.012,
+   "r_1w": 2.28,
+   "r_4w": 2.99,
+   "r_entry": -6.11,
    "arm": "pruned"
   }
  ],
@@ -106,31 +106,31 @@
     "ANET",
     "ETN"
    ],
-   "r_entry": -9.95,
-   "r_4w": -13.83
+   "r_entry": -8.9,
+   "r_4w": -12.91
   },
   "pocket": {
    "names": [
     "NVDA",
     "AMD"
    ],
-   "r_entry": 3.89,
-   "r_4w": -11.49
+   "r_entry": -0.21,
+   "r_4w": -17.02
   },
   "pruned": {
    "names": [
     "VST",
     "CEG"
    ],
-   "r_entry": -3.33,
-   "r_4w": 0.7
+   "r_entry": -3.92,
+   "r_4w": 1.23
   },
   "plumbing": {
    "names": [
     "JPM"
    ],
-   "r_entry": -6.86,
-   "r_4w": -2.91
+   "r_entry": -5.4,
+   "r_4w": 1.95
   },
   "controls": {
    "names": [
@@ -138,21 +138,22 @@
     "WMT",
     "AAPL"
    ],
-   "r_entry": 4.6,
-   "r_4w": -2.42
+   "r_entry": 3.83,
+   "r_4w": -1.36
   }
  },
  "body": {
-  "r_4w": 3.21,
-  "r_entry": 1.33
+  "r_4w": 6.83,
+  "r_entry": 2.51
  },
- "feeding_now": [
-  "VST"
+ "feeding_now": [],
+ "dieback": [
+  "VRT",
+  "CEG"
  ],
- "dieback": [],
  "surprise": [
-  "CEG",
-  "VST"
+  "VST",
+  "CEG"
  ],
  "rule": "feeding = score rising and 4-week return above the body; dieback = 4-week return more than 2 pts below the body with score falling; surprise = a pruned name beating the feeding arm since entry"
 }
