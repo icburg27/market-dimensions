@@ -1,5 +1,5 @@
 {
- "asof": "2026-10-30",
+ "asof": "2026-11-06",
  "entry": "2026-08-25",
  "pocket": [
   "NVDA",
@@ -8,92 +8,92 @@
  "ranking": [
   {
    "ticker": "TSM",
-   "score": 0.994,
-   "d_score": 0.093,
-   "r_1w": -3.91,
-   "r_4w": -14.21,
-   "r_entry": -3.5,
+   "score": 0.98,
+   "d_score": -0.014,
+   "r_1w": -6.83,
+   "r_4w": -16.81,
+   "r_entry": -10.09,
    "arm": "feeding"
   },
   {
    "ticker": "ETN",
-   "score": 0.889,
-   "d_score": 0.025,
-   "r_1w": -0.19,
-   "r_4w": -15.55,
-   "r_entry": -9.77,
+   "score": 0.892,
+   "d_score": 0.003,
+   "r_1w": -7.55,
+   "r_4w": -20.78,
+   "r_entry": -16.58,
    "arm": "feeding"
   },
   {
+   "ticker": "SMCI",
+   "score": 0.857,
+   "d_score": 0.108,
+   "r_1w": -10.76,
+   "r_4w": -31.79,
+   "r_entry": -26.26,
+   "arm": "controls"
+  },
+  {
    "ticker": "ANET",
-   "score": 0.849,
-   "d_score": 0.088,
-   "r_1w": -3.18,
-   "r_4w": -18.17,
-   "r_entry": -11.64,
+   "score": 0.796,
+   "d_score": -0.053,
+   "r_1w": 1.16,
+   "r_4w": -21.44,
+   "r_entry": -10.61,
    "arm": "feeding"
   },
   {
    "ticker": "NVDA",
-   "score": 0.751,
-   "d_score": 0.136,
-   "r_1w": -4.21,
-   "r_4w": -13.26,
-   "r_entry": -4.55,
+   "score": 0.792,
+   "d_score": 0.041,
+   "r_1w": -7.77,
+   "r_4w": -18.37,
+   "r_entry": -11.97,
    "arm": "pocket"
-  },
-  {
-   "ticker": "SMCI",
-   "score": 0.749,
-   "d_score": 0.034,
-   "r_1w": -6.28,
-   "r_4w": -26.43,
-   "r_entry": -17.37,
-   "arm": "controls"
   },
   {
    "ticker": "AMD",
-   "score": 0.721,
-   "d_score": 0.155,
-   "r_1w": -3.7,
-   "r_4w": -20.78,
-   "r_entry": 4.14,
+   "score": 0.775,
+   "d_score": 0.054,
+   "r_1w": -10.69,
+   "r_4w": -27.01,
+   "r_entry": -7.0,
    "arm": "pocket"
   },
   {
-   "ticker": "AVGO",
-   "score": 0.719,
-   "d_score": 0.093,
-   "r_1w": -0.89,
-   "r_4w": -8.15,
-   "r_entry": -9.43,
+   "ticker": "VRT",
+   "score": 0.763,
+   "d_score": 0.058,
+   "r_1w": -20.99,
+   "r_4w": -26.13,
+   "r_entry": -29.04,
    "arm": "feeding"
   },
   {
-   "ticker": "VRT",
-   "score": 0.705,
-   "d_score": -0.052,
-   "r_1w": 16.98,
-   "r_4w": -8.5,
-   "r_entry": -10.19,
+   "ticker": "AVGO",
+   "score": 0.717,
+   "d_score": -0.001,
+   "r_1w": -9.35,
+   "r_4w": -19.2,
+   "r_entry": -17.89,
    "arm": "feeding"
   },
   {
    "ticker": "VST",
-   "score": 0.601,
-   "d_score": 0.152,
-   "r_1w": -3.22,
-   "r_4w": -0.53,
-   "r_entry": -1.73,
+   "score": 0.664,
+   "d_score": 0.062,
+   "r_1w": -9.9,
+   "r_4w": -23.55,
+   "r_entry": -11.46,
    "arm": "pruned"
   },
   {
    "ticker": "CEG",
-   "score": 0.51,
-   "d_score": -0.012,
-   "r_1w": 2.28,
-   "r_4w": 2.99,
-   "r_entry": -6.11,
+   "score": 0.569,
+   "d_score": 0.059,
+   "r_1w": -3.77,
+   "r_4w": -16.31,
+   "r_entry": -9.64,
    "arm": "pruned"
   }
  ],
@@ -106,31 +106,31 @@
     "ANET",
     "ETN"
    ],
-   "r_entry": -8.9,
-   "r_4w": -12.91
+   "r_entry": -16.84,
+   "r_4w": -20.87
   },
   "pocket": {
    "names": [
     "NVDA",
     "AMD"
    ],
-   "r_entry": -0.21,
-   "r_4w": -17.02
+   "r_entry": -9.49,
+   "r_4w": -22.69
   },
   "pruned": {
    "names": [
     "VST",
     "CEG"
    ],
-   "r_entry": -3.92,
-   "r_4w": 1.23
+   "r_entry": -10.55,
+   "r_4w": -19.93
   },
   "plumbing": {
    "names": [
     "JPM"
    ],
-   "r_entry": -5.4,
-   "r_4w": 1.95
+   "r_entry": -5.49,
+   "r_4w": 1.27
   },
   "controls": {
    "names": [
@@ -138,18 +138,19 @@
     "WMT",
     "AAPL"
    ],
-   "r_entry": 3.83,
-   "r_4w": -1.36
+   "r_entry": 1.45,
+   "r_4w": -5.33
   }
  },
  "body": {
-  "r_4w": 6.83,
-  "r_entry": 2.51
+  "r_4w": 3.95,
+  "r_entry": 0.93
  },
  "feeding_now": [],
  "dieback": [
-  "VRT",
-  "CEG"
+  "TSM",
+  "ANET",
+  "AVGO"
  ],
  "surprise": [
   "VST",
